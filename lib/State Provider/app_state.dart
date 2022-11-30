@@ -10,6 +10,7 @@ class AppState with ChangeNotifier{
     return _album;
   }
  // Future<void>
+  // Future<void>
   getAlbum({searchString,date,order})async{
     final response1 = await httpRequest(REQUEST_TYPE.GET, ('${baseUrl}posts?limit=100&start=1${
         searchString==null?"":"&keyword=$searchString"}${date==null?"":"&date=$date"}&orderby=${order==null?"1":'$order'}'), { });
