@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
  // int _currentMax=5;
   TextEditingController _controller = TextEditingController();
   initState() {
-     handleNext();
+  //   handleNext();
   //  _scrollController.addListener(() {
   //    if(_scrollController.position.pixels==_scrollController.position.maxScrollExtent){
    //     getMoreList();
@@ -57,13 +57,13 @@ class _HomePageState extends State<HomePage> {
   //
   // }
 
-  handleNext(){
-    scrollController.addListener(() {
-    if(scrollController.position.pixels==scrollController.position.maxScrollExtent) {
-
-    };
-    });
-  }
+  // handleNext(){
+  //   scrollController.addListener(() {
+  //   if(scrollController.position.pixels==scrollController.position.maxScrollExtent) {
+  //
+  //   };
+  //   });
+  // }
   @override
   Widget build(BuildContext context) {
     AppState provider = Provider.of<AppState>(context, listen: false);

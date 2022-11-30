@@ -213,10 +213,15 @@ class _InsideFilterState extends State<InsideFilter> {
                 width: 150,
                 child: ElevatedButton(
                     onPressed: () {
+
+                      provider.getAlbum(order: order, date: dateInput.text);
                       setState(() {
-                        provider.getAlbum(order: order, date: dateInput.text);
+                        Navigator.pop(context);
+                      //  provider.album.clear();
                       });
-                      Navigator.pop(context);
+
+
+
                       // Navigator.pushAndRemoveUntil(
                       //   context,
                       //   MaterialPageRoute(builder: (context) => HomePage()),
