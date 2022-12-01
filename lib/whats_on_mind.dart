@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:selectable_container/selectable_container.dart';
 import 'package:untitled2/main.dart';
+import 'package:untitled2/pro_image.dart';
 import 'package:untitled2/profile.dart';
 
 import 'Constant/Api handler.dart';
@@ -95,10 +96,36 @@ class _WhatsMindState extends State<WhatsMind> {
           ),
         ],
       ),
-      body: Column(
+      body: Padding( padding: EdgeInsets.only(bottom: 30),
+          child:Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Profile(),
+          //const Profile(),
+          Container(
+              height: 90,
+              child: Row(
+                mainAxisAlignment:
+                MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding:
+                    EdgeInsets.symmetric(horizontal: 10),
+                    child: CircleAvatar(
+// backgroundColor: Colors.green,
+                      radius: 30,
+                      child: ImagePro(),
+                    ),
+                  ),
+                  Expanded(
+                    child: Text('Jerry Luis',
+                        style: const TextStyle(
+                            fontSize: 21,
+                            fontWeight: FontWeight.bold),
+                        overflow: TextOverflow.ellipsis),
+                  ),
+
+                ],
+              )),
          Container(
            height: 200,
            color: (color==''?Colors.white:HexColor(color) ),
@@ -111,8 +138,8 @@ class _WhatsMindState extends State<WhatsMind> {
              style: const TextStyle(color: Colors.black,fontSize: 30,),
            ),)),
           Spacer(),
-          Row(
-             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Container(
                   child: SelectableContainer(
@@ -244,8 +271,9 @@ class _WhatsMindState extends State<WhatsMind> {
 
               ],
             ),
+
         ],
-      ),
+      )),
     );
   }
 }

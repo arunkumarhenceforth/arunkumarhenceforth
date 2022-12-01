@@ -11,7 +11,7 @@ class AppState with ChangeNotifier{
   }
  // Future<void>
   getAlbum({searchString,date,order})async{
-    final response1 = await httpRequest(REQUEST_TYPE.GET, ('${baseUrl}posts?limit=100&start=1${
+    final response1 = await httpRequest(REQUEST_TYPE.GET, ('${baseUrl}posts?limit=200&start=1${
         searchString==null?"":"&keyword=$searchString"}${date==null?"":"&date=$date"}&orderby=${order==null?"1":'$order'}'), { });
           print("Search---${response1.body}");
        if (response1.statusCode == 200) {
@@ -19,7 +19,7 @@ class AppState with ChangeNotifier{
             _album.clear();
             a.forEach((element) {
             _album.add(Album.fromJson(element));
-             print('print -${a.toString()}');
+            // print('print -${a.toString()}');
           });
         } else {
           throw Exception('Failed to load album');
